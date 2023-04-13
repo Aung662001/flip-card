@@ -13,7 +13,8 @@ export function useFlashCard() {
 export default function FlashCardProvider({ children }) {
   const [questions, setQuestions] = useState(SIMPLE_FLASHCARD);
   const [loading, setLoading] = useState(true);
-
+  const [catagory, setCatagory] = useState([]);
+  console.log(catagory);
   useEffect(() => {
     axios
       .get("https://opentdb.com/api.php?amount=10&category=18")
@@ -38,13 +39,19 @@ export default function FlashCardProvider({ children }) {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .get("https://opentdb.com/api_category.php")
+      .then((res) => setCatagory(res.data.trivia_categories));
+  }, []);
+
   function stringDecoder(str) {
     const textArea = document.createElement("textarea");
     textArea.innerHTML = str;
     return textArea.innerText;
   }
   return (
-    <FlashCardContext.Provider value={{ questions, loading }}>
+    <FlashCardContext.Provider value={{ questions, loading, catagory }}>
       {children}
     </FlashCardContext.Provider>
   );

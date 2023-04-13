@@ -1,6 +1,6 @@
 body {
   background-color: rgb(204, 212, 209);
-  margin: 0 auto;
+  margin: 0;
 }
 .card-grid {
   display: grid;
@@ -16,7 +16,6 @@ body {
   align-items: center;
   border-radius: 10px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
-  height: 150px;
   transform-style: preserve-3d;
   background-color: white;
   transform: perspective(800px) rotateY(var(--rotate-y, 0))
@@ -27,7 +26,7 @@ body {
 }
 .container {
   max-width: 900px;
-  margin: 1rem 2rem;
+  margin: 1rem auto;
 }
 .card.flip {
   --rotate-y: 180deg;

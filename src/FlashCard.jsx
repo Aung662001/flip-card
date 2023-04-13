@@ -13,6 +13,10 @@ export default function FlashCard({ flashCard }) {
     flashCard.question,
     flashCard.options,
   ]);
+  useEffect(() => {
+    window.addEventListener("resize", setMaxHeight);
+    return window.removeEventListener("resize", setMaxHeight);
+  }, []);
   function setMaxHeight() {
     const frontHeight = frontElement.current.getBoundingClientRect().height;
     // const backHeight = backElement.current.getBoundingClientRect().height;
