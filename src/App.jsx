@@ -3,12 +3,9 @@ import { useFlashCard } from "./FlashCardContext";
 import FlashCardList from "./FlashCardList";
 
 function App() {
-  const { catagory } = useFlashCard();
-  const catagoryEle = useRef();
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
-  let { SIMPLE_FLASHCARD } = useFlashCard();
+  const { catagory, handleSubmit, questionNumberRef, catagoryEle } =
+    useFlashCard();
+
   return (
     <div className="container">
       <div className="header">
@@ -24,6 +21,21 @@ function App() {
                 );
               })}
             </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="question-number">Question Number</label>
+            <input
+              type="number"
+              step={1}
+              defaultValue={10}
+              id="question-number"
+              ref={questionNumberRef}
+            ></input>
+          </div>
+          <div className="form-group">
+            <button type="submit" className="btn ">
+              Generate
+            </button>
           </div>
         </form>
       </div>
