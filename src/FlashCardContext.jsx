@@ -48,6 +48,7 @@ export default function FlashCardProvider({ children }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true);
 
     axios
       .get("https://opentdb.com/api.php?", {
