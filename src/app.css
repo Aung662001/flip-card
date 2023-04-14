@@ -93,3 +93,37 @@ body {
   background-color: hsl(200, 86%, 33%);
   cursor: pointer;
 }
+/* sleleton */
+.option-skeleton {
+  width: 50%;
+  height: 9px;
+  background-color: #d7d0d0;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.front-skeleton {
+  width: 400px;
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+}
+.question-sleleton {
+  width: 90%;
+  height: 10px;
+  background-color: #d7d0d0;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.question-sleleton:last-child {
+  width: 50%;
+}
+.options-skeleton {
+  width: 100%;
+  margin-top: 3rem;
+  margin-left: 6rem;
+}
+.option-skeleton:last-child {
+  width: 200px;
+}
